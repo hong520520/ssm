@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,7 +35,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="add" method="post" onsubmit="return look()">
+     <form action="registUser" method="post" onsubmit="return look()">
 		<!-- 编号:<input type="text" name="id" /><br />  -->
 		姓名:<input type="text" name="name" id="name" /><br /> 
 		密码:<input type="text"name="password" id="password"/><br /> 
@@ -43,8 +43,8 @@
       <input type="radio"  name="sex"  value="女"  />女<br/>
 		年龄:<input type="text" name="age" id="age"/><br /> 
 		爱好:<input type="text"name="hobby" id="hobby"/><br /> 
-		<input type="submit" value="新增用户" /> 
-		<a href="findPage">返回</a>
+		<input type="submit"  value="注册"/> 
+		<a href="toIndex">返回</a>
 	</form>
 </body>
 </html>

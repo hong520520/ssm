@@ -21,7 +21,6 @@ public class TextController {
 	
 	@Resource
 	private UserService userService;
-
 	@RequestMapping("/login")
 	public String login(@RequestParam("name")String name,
 			@RequestParam("password")String password,Model model) throws Exception{
@@ -32,12 +31,12 @@ public class TextController {
 		if(result!=null){
 			//登录成功
 			model.addAttribute("currentUser", result.getName());	
-			return "redirect:findAll";
+			return "redirect:findPage";
 		}
 		return "error";
 	}
 	
-	@RequestMapping("/findAll")
+	@RequestMapping("/findPage")
 	public String findPageUser(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage,Model model)throws Exception{
 		model.addAttribute("pagemsg", userService.findByPage(currentPage));//回显分页数据
 		return "user";
@@ -46,7 +45,7 @@ public class TextController {
 	@RequestMapping("/updateById")
 	public String updateById(User user) {
 		userService.updateById(user);
-		return "redirect:findAll"; 
+		return "redirect:findPage"; 
 	}
 	
 	/*@RequestMapping("/save")
@@ -63,20 +62,31 @@ public class TextController {
 	@RequestMapping("/deleteById")
 	public String deleteById(Integer id) {
 		userService.deleteById(id);
-		return "redirect:findAll";
+		return "redirect:findPage";
 	}
 
 	@RequestMapping("/add")
 	public String addUser(User user) {
 	    userService.add(user);
-		return "redirect:findAll";
+		return "redirect:findPage";
 	}
-	
+	@RequestMapping("/registUser")
+	public String regist(User user) {
+	    userService.add(user);
+		return "index";
+	}
+	 @RequestMapping("/toIndex")
+		public String toIndex(){
+			return "index";
+		}
 	 @RequestMapping("/toAddUser")
 		public String toAddUser(){
 			return "addUser";
 		}
-	
+	 @RequestMapping("/toRegist")
+		public String regist(){
+			return "regist";
+		}
 	@RequestMapping("/selectById")
 	public ModelAndView selectById(Integer id) {
 		User user = userService.selectById(id);
@@ -86,7 +96,7 @@ public class TextController {
 	}
 	
 	/*@RequestMapping("/selectById")
-	 public String selectById(@RequestParam(value="id")int id, Model model )throws Exception{
+	 public String selectById(@RequestParam(value="id")integer id, Model model )throws Exception{
 		    User user=userService.selectById(id);
 			model.addAttribute("u", user);
 			return "userInfo";

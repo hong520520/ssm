@@ -46,7 +46,7 @@
       年龄:<input type="text"  name="age"  id="age" value="${u.age}"/><br/>
       爱好:<input type="text"  name="hobby" id="hobby" value="${u.hobby}"/><br/>
    <input type="submit" value="修改"/>
-   <a href="findAll">返回</a>
+   <a href="findPage">返回</a>
       </form>
 </body>
 </html>

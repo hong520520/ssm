@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1>对不起，查无此人</h1>
-<h1> <a href="findAll">返回首页</a></h1>
+<h1> <a href="findPage">返回首页</a></h1>
 </body>
 </html>
